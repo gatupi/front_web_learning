@@ -1,0 +1,36 @@
+body {
+    background-color: #222;
+    color: #ddd;
+    font-family: sans-serif;
+}
+
+/* Seletor de classe (.<nome-da-classe>) */
+.form-item-container {
+    display: flex;
+    flex-direction: column-reverse;
+    margin-top: 20px;
+    max-width: 400px;
+}
+
+.form-item-container label {
+    margin-bottom: 3px;
+    font-size: 1.1em;
+}
+
+.form-item-container .form-input {
+    background-color: #333;
+    color: #ddd;
+    font-size: 1.2em;
+    padding: 4px 8px;
+    border: 1px solid #777;
+    border-radius: 4px;
+    outline: none;
+}
+
+.form-item-container .form-input:focus {
+    border-color: orange;
+}
+
+.form-item-container .form-input:focus + label {
+    color: orange;
+}
