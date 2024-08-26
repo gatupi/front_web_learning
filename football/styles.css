@@ -1,3 +1,5 @@
+/* TODO: scoreboard size */
+
 body {
     background-color: #112;
 }
@@ -9,6 +11,7 @@ body {
 .scoreboard {
     display: inline-block;
     font-family: sans-serif;
+    font-size: 16px;
 }
 
 .scoreboard .header {
@@ -88,8 +91,8 @@ body {
 }
 
 .scoreboard .main .time-container .added-time {
-    background-color: yellow;
-    color: #333;
+    background: linear-gradient(to top, orange, rgb(255, 190, 71));
+    color: darkblue;
     font-weight: bold;
 }
 
@@ -187,14 +190,14 @@ body {
 
 .scoreboard.show-aggregate .main .aggregate {
     animation-name: show-scoreboard-aggregate;
-    animation-duration: 0.5s;
+    animation-duration: .5s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
 }
 
 .scoreboard.hide-aggregate .main .aggregate {
     animation-name: hide-scoreboard-aggregate;
-    animation-duration: 0.5s;
+    animation-duration: .5s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
 }
@@ -221,6 +224,36 @@ body {
     height: 9px;
     width: 6px;
     background: red;
+}
+
+.scoreboard .red-cards-container {
+    grid-template-columns: 1fr 1fr;
+    right: 0;
+    transform: translateX(calc(100% + 8px));
+}
+
+@keyframes slide-out-red-cards-container {
+    from { right: 0 }
+    to { right: -32px }
+}
+
+@keyframes slide-in-red-cards-container {
+    from { right: -32px }
+    to { right: 0 }
+}
+
+.scoreboard .red-cards-container.slide-out {
+    animation-name: slide-out-red-cards-container;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+.scoreboard .red-cards-container.slide-in {
+    animation-name: slide-in-red-cards-container;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
 }
 
 /* buttons */

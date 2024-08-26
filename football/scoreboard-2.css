@@ -152,25 +152,25 @@
     height: 24px;
 }
 
-@keyframes show-scoreboard-aggregate {
+@keyframes show-scoreboard-2-aggregate {
     from { height: 0; }
     to { height: 24px; }
 }
 
-@keyframes hide-scoreboard-aggregate {
+@keyframes hide-scoreboard-2-aggregate {
     from { height: 24px; }
     to { height: 0; }
 }
 
 .scoreboard-2.show-aggregate .aggregate {
-    animation-name: show-scoreboard-aggregate;
+    animation-name: show-scoreboard-2-aggregate;
     animation-duration: .2s;
     animation-fill-mode: forwards;
     animation-timing-function: linear;
 }
 
 .scoreboard-2.hide-aggregate .aggregate {
-    animation-name: hide-scoreboard-aggregate;
+    animation-name: hide-scoreboard-2-aggregate;
     animation-duration: .2s;
     animation-fill-mode: forwards;
 }

@@ -111,15 +111,27 @@ const setScoreboardAddedTime = (scoreboardId, minutes) => {
 };
 
 const showScoreboardAggregate = (scoreboardId) => {
-  const classList = getScoreboardById(scoreboardId).classList;
-  classList.remove("hide-aggregate");
-  classList.add("show-aggregate");
+  const scoreboard = getScoreboardById(scoreboardId);
+  scoreboard.classList.remove("hide-aggregate");
+  scoreboard.classList.add("show-aggregate");
+  if (scoreboard.classList.contains('scoreboard')) {
+    scoreboard.querySelectorAll('.red-cards-container').forEach(container => {
+      container.classList.add('slide-out');
+      container.classList.remove('slide-in');
+    });
+  }
 };
 
 const hideScoreboardAggregate = (scoreboardId) => {
-  const classList = getScoreboardById(scoreboardId).classList;
-  classList.remove("show-aggregate");
-  classList.add("hide-aggregate");
+  const scoreboard = getScoreboardById(scoreboardId);
+  scoreboard.classList.remove("show-aggregate");
+  scoreboard.classList.add("hide-aggregate");
+  if (scoreboard.classList.contains('scoreboard')) {
+    scoreboard.querySelectorAll('.red-cards-container').forEach(container => {
+      container.classList.add('slide-in');
+      container.classList.remove('slide-out');
+    });
+  }
 };
 
 const configureSwitchButtons = () => {
