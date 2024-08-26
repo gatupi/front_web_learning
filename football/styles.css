@@ -63,7 +63,6 @@ body {
 .scoreboard .header .title:nth-child(2) {
     animation-delay: 8s;
 }
-
 .scoreboard .main {
     position: relative;
     display: flex;

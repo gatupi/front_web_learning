@@ -134,3 +134,18 @@ const setScoreboardTeamsByMatch = (scoreboardId, homeTeamIndex, awayTeamIndex) =
   setScoreboardTeam(scoreboardId, teams[homeTeamIndex]);
   setScoreboardTeam(scoreboardId, teams[awayTeamIndex], false);
 }
+
+const addScoreboardRedCard = (scoreboardId, isHomeTeam = true) => {
+
+  getScoreboardById(scoreboardId).querySelector(`.${isHomeTeam ? 'home' : 'away'}-team .red-cards-container`).append((() => {
+    const redCard = document.createElement('div');
+    redCard.classList.add('red-card');
+    return redCard;
+  })());
+}
+
+const removeScoreboardRedCard = (scoreboardId, isHomeTeam = true) => {
+  [...getScoreboardById(scoreboardId)
+    .querySelectorAll(`.${isHomeTeam ? 'home' : 'away'}-team .red-cards-container .red-card`)]
+    .find((card, index, cards) => index === cards.length - 1)?.remove();
+}

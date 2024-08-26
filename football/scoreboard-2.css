@@ -205,4 +205,5 @@
 
 .scoreboard-2 .away-team .red-cards-container {
     right: 48px;
+    transform: translateY(100%) rotateY(180deg);
 }
