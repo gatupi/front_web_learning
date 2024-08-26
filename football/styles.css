@@ -1,0 +1,301 @@
+body {
+    background-color: #112;
+}
+
+.hidden {
+    visibility: hidden !important;
+}
+
+.scoreboard {
+    display: inline-block;
+    font-family: sans-serif;
+}
+
+.scoreboard .header {
+    position: relative;
+    background-color: #555;
+    height: 24px;
+    width: 156px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    text-wrap: nowrap;
+}
+
+@keyframes move-header-title {
+    0% {
+        left: 100%;
+        transform: translateX(100%);
+    }
+
+    10% {
+        left: 8px;
+        transform: translateX(0);
+    }
+
+    50% {
+        left: 8px;
+        transform: translateX(0);
+    }
+
+    60% {
+        left: 0;
+        transform: translateX(-200%);
+    }
+
+    100% {
+        left: 0;
+        transform: translateX(-200%);
+    }
+}
+
+.scoreboard .header .title {
+    position: absolute;
+    color: #aaa;
+    font-size: 12px;
+    left: 100%;
+    transform: translate(100%);
+    animation-name: move-header-title;
+    animation-duration: 16s;
+    animation-iteration-count: infinite;
+}
+
+.scoreboard .header .title:nth-child(2) {
+    animation-delay: 8s;
+}
+
+.scoreboard .main {
+    position: relative;
+    display: flex;
+}
+
+.scoreboard .main .time-container {
+    display: flex;
+    flex-direction: column;
+    width: 56px;
+}
+
+.scoreboard .main .time-container span {
+    display: block;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scoreboard .main .time-container .current-time {
+    background: linear-gradient(to top, #00005d, #00008b);;
+    color: #eee;
+}
+
+.scoreboard .main .time-container .added-time {
+    background-color: yellow;
+    color: #333;
+    font-weight: bold;
+}
+
+.scoreboard .main .teams-container .team {
+    position: relative;
+    display: flex;
+}
+
+.scoreboard .logo-container {
+    background: linear-gradient(to bottom, #fff, #ddd);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scoreboard .team .name-container {
+    background-color: #ccc;
+    width: 60px;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    font-weight: bold;
+    color: #555;
+}
+
+.scoreboard .team .name-container .team-name {
+    flex: 1;
+    text-align: center;
+    align-content: center;
+}
+
+.scoreboard .team .name-container .team-color {
+    /* background: linear-gradient(to bottom, red 33.33%, white 33.33% 66.66%, black 66.66%); */
+    background: lightseagreen;
+    width: 4px;
+    /* height: 100%; */
+}
+
+.scoreboard .away-team .name-container .team-color {
+    background: purple;
+}
+
+.scoreboard .main .teams-container .away-team .name-container{
+    background-color: #aaa;
+}
+
+.scoreboard .main .teams-container .goals-container {
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* gradient left (darker) to right (lighter) */
+    background: linear-gradient(to right, #00005d, #00008b);
+    color: #eee;
+    font-weight: bold;
+}
+
+.scoreboard .main .teams-container .logo-container .logo {
+    height: 24px;
+}
+
+@keyframes show-scoreboard-aggregate {
+    from {
+        width: 0;
+    }
+    to {
+        width: 32px;
+    }
+}
+
+@keyframes hide-scoreboard-aggregate {
+    from {
+        width: 32px;
+    }
+    to {
+        width: 0;
+    }
+}
+
+.scoreboard .main .aggregate {
+    position: absolute;
+    color: #bbb;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to right, #444, #555);
+    width: 0;
+    height: 100%;
+    right: 0;
+    transform: translateX(100%);
+    overflow: hidden;
+    z-index: 1111;
+}
+
+.scoreboard.show-aggregate .main .aggregate {
+    animation-name: show-scoreboard-aggregate;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.scoreboard.hide-aggregate .main .aggregate {
+    animation-name: hide-scoreboard-aggregate;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards;
+}
+
+.scoreboard .main .aggregate .goals {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.scoreboard .red-cards-container,
+.scoreboard-2 .red-cards-container {
+    /* background: blue; */
+    position:absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 3px;
+}
+
+.scoreboard .red-card,
+.scoreboard-2 .red-card {
+    height: 9px;
+    width: 6px;
+    background: red;
+}
+
+/* buttons */
+
+@keyframes switch-btn-on {
+    from { left: 0 }
+    to { left: 50% }
+}
+
+@keyframes switch-btn-off {
+    from { left: 50% }
+    to { left: 0 }
+}
+
+.switch-btn {
+    display: inline-flex;
+    align-items: center;
+}
+
+.switch-btn > label {
+    margin-left: 8px;
+    font-family: sans-serif;
+    color: #ddd;
+    font-size: 16px;
+}
+
+.switch-btn > .slider {
+    position: relative;
+    background-color: #aaa;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+}
+
+.switch-btn > .slider:hover {
+    cursor: pointer;
+}
+
+.switch-btn > .slider > .controller {
+    position: absolute;
+    background-color: #ddd;
+    height: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.switch-btn input[type="checkbox"] {
+    display: none;
+}
+
+.switch-btn input[type="checkbox"]:not(:checked) + .slider > .controller {
+    animation-name: switch-btn-off;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+.switch-btn input[type="checkbox"]:checked + .slider > .controller {
+    animation-name: switch-btn-on;
+    animation-duration: .2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+.switch-btn input[type="checkbox"]:checked + .slider {
+    background-color: #57f;
+    transition: ease-in;
+    transition-duration: .2s;
+}
+
+.switch-btn input[type="checkbox"]:not(:checked) + .slider {
+    background-color: #8f8f8f;
+    transition: ease-in;
+    transition-duration: .2s;
+    filter: brightness(75%);
+}

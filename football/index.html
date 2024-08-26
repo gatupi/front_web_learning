@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="round-edition.css">
+    <link rel="stylesheet" href="scoreboard-2.css">
+    <link rel="stylesheet" href="dropdown.css">
+    <script src="script.js"></script>
+    <script src="scripts/round-edition.js"></script>
+</head>
+
+<body>
+    <div id="score2" class="scoreboard" data-current-time-in-seconds="0">
+        <div class="header">
+            <span class="title">CHAMPIONSHIP</span>
+            <!-- <span class="title">MATCHWEEK 1</span> -->
+        </div>
+        <div class="main">
+            <div class="time-container">
+                <span class="current-time">00:00</span>
+                <span class="hidden added-time">+4</span>
+            </div>
+            <div class="teams-container">
+                <div class="team home-team">
+                    <div class="logo-container">
+                        <img class="logo" src="images/generic-logo.png" alt="">
+                    </div>
+                    <div class="name-container">
+                        <span class="team-name">TM1</span>
+                        <div class="team-color"></div>
+                    </div>
+                    <div class="goals-container">
+                        <span class="goals">0</span>
+                    </div>
+                </div>
+                <div class="team away-team">
+                    <div class="logo-container">
+                        <img class="logo" src="images/generic-logo.png" alt="">
+                    </div>
+                    <div class="name-container">
+                        <span class="team-name">TM2</span>
+                        <div class="team-color"></div>
+                    </div>
+                    <div class="goals-container">
+                        <span class="goals">0</span>
+                    </div>
+                </div>
+            </div>
+            <div class="aggregate">
+                <span class="goals">0</span>
+                <span class="goals">0</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="score1" class="scoreboard-2" data-current-time-in-seconds="0">
+        <div class="header">
+            <span class="title">COPA LIBERTADORES - OITAVAS DE FINAL</span>
+        </div>
+        <div class="main">
+            <div class="time-container">
+                <span class="current-time">00:00</span>
+                <span class="added-time">+4</span>
+            </div>
+            <div class="teams-container">
+                <div class="team home-team">
+                    <div class="logo-container">
+                        <img class="logo" src="images/generic-logo.png" alt="">
+                    </div>
+                    <div class="name-container">
+                        <span class="team-name">TM1</span>
+                        <div class="team-color"></div>
+                    </div>
+                    <div class="goals-container">
+                        <span class="goals">0</span>
+                    </div>
+                    <div class="red-cards-container">
+                        <div class="red-card"></div>
+                    </div>
+                </div>
+                <div class="team away-team">
+                    <div class="logo-container">
+                        <img class="logo" src="images/generic-logo.png" alt="">
+                    </div>
+                    <div class="name-container">
+                        <span class="team-name">TM2</span>
+                        <div class="team-color"></div>
+                    </div>
+                    <div class="goals-container">
+                        <span class="goals">0</span>
+                    </div>
+                    <div class="red-cards-container">
+                        <div class="red-card"></div>
+                        <div class="red-card"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="aggregate">
+                <span class="goals">0</span>
+                <span class="goals">0</span>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-top: 10px;">
+        <div class="switch-btn">
+            <input id="showScoreboardAggregate" name="switch" type="checkbox">
+            <div class="slider">
+                <div class="controller"></div>
+            </div>        
+            <label for="showScoreboardAggregate">Show aggregate</label>
+        </div>
+
+        <div class="switch-btn">
+            <input id="showAddedTime" name="switch" type="checkbox">
+            <div class="slider">
+                <div class="controller"></div>
+            </div>        
+            <label for="showAddedTime">Show added time</label>
+        </div>
+    
+        <div class="switch-btn">
+            <input id="switch" name="switch" type="checkbox">
+            <div class="slider">
+                <div class="controller"></div>
+            </div>        
+            <label for="switch">Start time</label>
+        </div>
+
+        <!-- <div class="dropdown" style="width: 240px;">
+            <div class="label">Choose a scoreboard</div>
+            <div class="display-container">
+                <span class="selected-option">Scoreboard 1</span>
+                <div class="icon-button">
+                    <span class="icon"></span>
+                </div>
+            </div>
+            <div class="list-container">
+                <div class="option" data-value="1">
+                    <span class="option-label">Scoreboard 1</span>
+                </div>
+                <div class="option" data-value="2">
+                    <span class="option-label">Scoreboard 2</span>
+                </div>
+                <div class="option" data-value="3">
+                    <span class="option-label">Scoreboard 3</span>
+                </div>
+                <div class="option" data-value="1">
+                    <span class="option-label">Scoreboard 1</span>
+                </div>
+                <div class="option" data-value="2">
+                    <span class="option-label">Scoreboard 2</span>
+                </div>
+                <div class="option" data-value="3">
+                    <span class="option-label">Scoreboard 3</span>
+                </div>
+            </div>
+        </div> -->
+    </div>
+
+    <select id="scoreboardInput">
+        <option value="0" disabled selected style="display: none;">Choose a scoreboard</option>
+        <option value="1">Scoreboard 1</option>
+        <option value="2">Scoreboard 2</option>
+    </select>
+
+    <div id="timesBrasileirao" class="selectable-teams-container"></div>
+</body>
+
+</html>

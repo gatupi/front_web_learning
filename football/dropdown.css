@@ -1,0 +1,43 @@
+.dropdown {
+    position: relative;
+    display: inline-block;
+    background-color: blue;
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+.dropdown > .label {
+    position: absolute;
+    top: 0;
+    transform: translateY(-100%);
+    color: white;
+    text-wrap: nowrap;
+}
+
+.dropdown .display-container {
+    background: #eee;
+    font-size: 1em;
+    padding: 0 16px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.dropdown .display-container:focus {
+    border: 1px solid orange;
+}
+
+.dropdown .list-container {
+    position: absolute;
+    background: #ddd;
+    top: 32px;
+    width: 100%;
+    overflow: auto;
+    max-height: 96px;
+    z-index: 1111;
+}
+
+.dropdown .list-container .option {
+    height: 24px;
+}
